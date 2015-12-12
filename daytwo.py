@@ -1,7 +1,7 @@
 import operator
 import functools
 
-problem = open("daytwo.txt")
+problem = open("daytwodata.txt")
 
 problist = []
 for line in problem:
