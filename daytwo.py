@@ -23,7 +23,7 @@ for i in problist:
     else:
         largest = max(i)
         smallest_side = [j for j in i if j != largest]  # a list [Y,Z] where Y and Z are height & width of smallest side
-        if len(smallest_side) != 2:  # if a package is YxYxZ where Y > Z, append Y to extra smallest_side will be only Z
+        if len(smallest_side) != 2:  # if a package is YxYxZ where Y > Z, append Y to smallest_side or it'll only be [Z]
             smallest_side.append(largest)
         ribbon_len = (sum(smallest_side) * 2) + (l * w * h)  # find the ribbon length (smallest perimeter + cubic feet)
         smallest_side = functools.reduce(operator.mul, smallest_side)  # then find the smallest side
