@@ -27,9 +27,11 @@ for i in problist:
             smallest_side.append(largest)
         ribbon_len = (sum(smallest_side) * 2) + (l * w * h)  # find the ribbon length (smallest perimeter + cubic feet)
         smallest_side = functools.reduce(operator.mul, smallest_side)  # then find the smallest side
-    paper_area = (2 * l * w) + (2 * w * h) + (2 * h * l)
+    paper_area = (2 * l * w) + (2 * w * h) + (2 * h * l)  # this could be concatenated but it's not
     paper.append(paper_area + smallest_side)
     ribbon.append(ribbon_len)
 
-print(sum(paper), "square feet of wrapping paper.")
-print(sum(ribbon), "feet of ribbon.")
+print(sum(paper), "square feet of wrapping paper.")  # for things like this, i find it more practical to append the
+print(sum(ribbon), "feet of ribbon.")                # results to a list. that way, if need be, you can go back and
+                                                     # run statistical analytics against the total output. probably not
+                                                     # necessary in the case of santa's elves, but it can't hurt.
